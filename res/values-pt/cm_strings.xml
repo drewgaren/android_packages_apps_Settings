@@ -56,6 +56,11 @@
     <string name="device_hostname">Nome do dispositivo</string>
     <string name="mod_version">Versão CyanogenMod</string>
     <string name="mod_version_default">Desconhecida</string>
+
+    <!-- crDroid Version -->	
+    <string name="crDroid_version">Versão crDroid AOSP</string>
+    <string name="crDroid_version_default">Desconhecida</string>
+
     <string name="build_date">Data de compilação</string>
     <string name="cpu_info">CPU</string>
     <string name="mem_info">Memória</string>
