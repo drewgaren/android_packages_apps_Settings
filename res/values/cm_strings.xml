@@ -585,7 +585,7 @@
     <string name="navigation_bar_height_23">23dp</string>
     <string name="navigation_bar_height_22">22dp</string>
     <string name="navigation_bar_height_21">21dp</string>
-    <string name="navigation_bar_height_21">20dp</string>	 
+    <string name="navigation_bar_height_20">20dp</string>	 
 
     <!-- Power Widget  -->
     <string name="power_widget_title">Power widget</string>
