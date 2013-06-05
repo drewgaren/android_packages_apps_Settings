@@ -16,7 +16,11 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="font_size_preview_text">Příliš žluťoučký kůň úpěl ďábelské ódy.</string>
     <string name="default_date_format"><xliff:g id="default_date_format">dd.MM.yyyy</xliff:g></string>
+<<<<<<< HEAD
     <string name="sync_item_title">Služba <xliff:g id="AUTHORITY">%s</xliff:g></string> 
+=======
+    <string name="sync_item_title">Služba <xliff:g id="AUTHORITY">%s</xliff:g></string>
+>>>>>>> aaa5b12... Settings: CS translation
 
     <string name="bluetooth_mas_request">Požadavek pro přístup ke zprávám</string>
     <string name="bluetooth_mas_acceptance_dialog_text">%1$s žádá o přístup ke zprávám. Povolit přístup pro %2$s?</string>
@@ -327,7 +331,11 @@
     <string name="icon_picker_gallery">Galerie</string>
     <string name="icon_picker_google_small">Google (malý)</string>
     <string name="icon_picker_googleplus">Google Plus</string>
+<<<<<<< HEAD
     <string name="icon_picker_googletalk">Hangouts</string> 
+=======
+    <string name="icon_picker_googletalk">Hangouts</string>
+>>>>>>> aaa5b12... Settings: CS translation
     <string name="icon_picker_maps">Mapy</string>
     <string name="icon_picker_movie">Film</string>
     <string name="icon_picker_music">Hudba</string>
@@ -516,7 +524,11 @@
     <string name="power_menu_screenshot_title">Snímek obrazovky</string>
     <string name="power_menu_expanded_desktop">Rozšířená plocha</string>
     <string name="expanded_desktop_disabled">Vypnuto</string>
+<<<<<<< HEAD
     <string name="expanded_desktop_status_bar">Stavová lišta zobrazena</string> 
+=======
+    <string name="expanded_desktop_status_bar">Stavová lišta zobrazena</string>
+>>>>>>> aaa5b12... Settings: CS translation
     <string name="expanded_desktop_no_status_bar">Stavová lišta skryta</string>
     <string name="power_menu_profiles_title">Přepínač profilů</string>
     <string name="power_menu_airplane_title">Režim V letadle</string>
@@ -555,7 +567,11 @@
     <string name="display_category_wakeup_options_title">Možnosti probuzení</string>
     <string name="pref_home_wake_title">Tlačítkem Domů</string>
     <string name="pref_home_wake_summary">Stisk tlačítka Domů probudí zařízení</string>
+<<<<<<< HEAD
     <string name="pref_volume_wake_title">Ovladačem hlasitosti</string> 
+=======
+    <string name="pref_volume_wake_title">Ovladačem hlasitosti</string>
+>>>>>>> aaa5b12... Settings: CS translation
     <string name="pref_volume_wake_summary">Stisk tlačítek hlasitosti probudí zařízení</string>
 
     <string name="adb_notify">Upozornění na ladění USB</string>
@@ -667,7 +683,11 @@
     <string name="lockscreen_background_result_successful">Změna pozadí dokončena</string>
     <string name="lockscreen_background_result_not_successful">Pozadí nelze změnit</string>
     <string name="lockscreen_background_color_fill">Barva výplně</string>
+<<<<<<< HEAD
     <string name="lockscreen_background_custom_image">Vlastní obrázek</string> 
+=======
+    <string name="lockscreen_background_custom_image">Vlastní obrázek</string>
+>>>>>>> aaa5b12... Settings: CS translation
     <string name="lockscreen_background_default_wallpaper">Výchozí tapeta</string>
 
     <string name="headset_connect_player_title">Spustit aplikaci na hudbu</string>
@@ -727,7 +747,11 @@ jednotlivě měnit a tím zvětšit počet řídících bodů. \'Odstranit\' sma
     <string name="auto_brightness_sensitivity_low">Nízká</string>
     <string name="auto_brightness_sensitivity_medium">Střední</string>
     <string name="auto_brightness_sensitivity_high">Vysoká</string>
+<<<<<<< HEAD
     <string name="auto_brightness_sensitivity_veryhigh">Velmi vysoká</string> 
+=======
+    <string name="auto_brightness_sensitivity_veryhigh">Velmi vysoká</string>
+>>>>>>> aaa5b12... Settings: CS translation
 
     <string name="advanced_reboot_title">Rozšířený restart</string>
     <string name="advanced_reboot_summary">Pokud povoleno, v nabídce vypnutí jsou také možnosti restartovat zařízení do recovery nebo bootloaderu</string>
@@ -745,7 +769,11 @@ jednotlivě měnit a tím zvětšit počet řídících bodů. \'Odstranit\' sma
     <string name="navring_action_ring_vibrate">Zvonit/vibrovat</string>
     <string name="navring_action_ring_silent">Zvonit/ztlumit</string>
     <string name="navring_action_ring_vibrate_silent">Zvonit/vibrovat/ztlumit</string>
+<<<<<<< HEAD
     <string name="navring_action_screen_off">Vypnutá obrazovka</string> 
+=======
+    <string name="navring_action_screen_off">Vypnutá obrazovka</string>
+>>>>>>> aaa5b12... Settings: CS translation
     <string name="navring_action_torch">Přepnout svítilnu</string>
     <string name="navring_action_google_now">Google Now</string>
     <string name="navring_choose_action_title">Zvolit akci</string>
@@ -757,7 +785,11 @@ jednotlivě měnit a tím zvětšit počet řídících bodů. \'Odstranit\' sma
     <string name="pie_control_sensitivity_low">Nízká</string>
     <string name="pie_control_sensitivity_medium">Střední</string>
     <string name="pie_control_sensitivity_high">Vysoká</string>
+<<<<<<< HEAD
     <string name="pie_control_sensitivity_very_high">Velmi vysoká</string> 	
+=======
+    <string name="pie_control_sensitivity_very_high">Velmi vysoká</string>
+>>>>>>> aaa5b12... Settings: CS translation
     <string name="pie_control_size">Velikost navigačního klíče</string>
     <string name="pie_control_trigger_positions">Pozice spouštěče</string>
     <string name="pie_control_trigger_left">Levý okraj obrazovky</string>
@@ -792,9 +824,15 @@ jednotlivě měnit a tím zvětšit počet řídících bodů. \'Odstranit\' sma
     <string name="gestures_action_search">Spustit vyhledávání</string>
     <string name="gestures_action_recent">Nedávné aplikace</string>
 
+<<<<<<< HEAD
     <string name="stylus_app_not_installed">%s není nainstalován</string> 
 
     <string name="wifi_ibss_freq_title">Kanál/frekvence</string> 
+=======
+    <string name="stylus_app_not_installed">%s není nainstalován</string>
+
+    <string name="wifi_ibss_freq_title">Kanál/frekvence</string>
+>>>>>>> aaa5b12... Settings: CS translation
     <string name="wifi_channel">Kanál</string>
     <string name="wifi_mhz">MHz</string>
 
@@ -808,5 +846,9 @@ jednotlivě měnit a tím zvětšit počet řídících bodů. \'Odstranit\' sma
     <string name="screen_off_animation_title">Animace vypnutí obrazovky</string>
     <string name="screen_off_animation_summary">Zobrazit animaci elektronového paprsku při vypnutí obrazovky</string>
 
+<<<<<<< HEAD
     <string name="confirm_delete_apn">Položka APN bude smazána.</string> 
+=======
+    <string name="confirm_delete_apn">Položka APN bude smazána.</string>
+>>>>>>> aaa5b12... Settings: CS translation
 </resources>
