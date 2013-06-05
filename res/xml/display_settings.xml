@@ -69,11 +69,12 @@
             android:key="category_wakeup_options"
             android:title="@string/display_category_wakeup_options_title" >
 
-        <CheckBoxPreference
-            android:key="pref_volume_wake"
-            android:title="@string/pref_volume_wake_title"
-            android:summary="@string/pref_volume_wake_summary"
-            android:defaultValue="false" />
+		<CheckBoxPreference
+		    android:key="pref_volume_wake"
+		    android:title="@string/pref_volume_wake_title"
+		    android:summary="@string/pref_volume_wake_summary"
+		    android:defaultValue="false" />
+	</PreferenceCategory>
         
         <PreferenceScreen
             android:key="custom_carrier_label"
