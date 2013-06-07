@@ -709,6 +709,11 @@
     <string name="status_bar_alpha_mode_always">always</string>
     <string name="status_bar_style_reset">Reset</string>
 
+    <!-- crDroid Notification Behavior Preferences -->
+    <!-- Thanks to Slim Roms and Kufikugel -->
+    <string name="notification_behaviour_title">Notification behavior</string>
+    <string name="additional_options_title">Notification behavior options</string>
+
     <!-- Status bar | Clock -->
     <string name="status_bar_clock">Clock and date</string>
     <string name="status_bar_clock_title">Clock and date style</string>
