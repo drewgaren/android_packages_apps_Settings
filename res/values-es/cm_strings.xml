@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2012-2013 The CyanogenMod Project
 
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-          http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="intent_sender_data_label"><xliff:g id="data">Datos:</xliff:g></string>
@@ -21,6 +21,11 @@
     <string name="wifi_mode">Modo</string>
     <string name="wifi_mode_ibss">Red Ad-Hoc (IBSS)</string>
     <string name="wifi_mode_ibss_short">Ad-Hoc</string>
+    <string name="wifi_setting_countrycode_title">Código de región Wi-Fi</string>
+    <string name="wifi_setting_countrycode_summary">Especificar el código de región para Wi-Fi</string>
+    <string name="wifi_setting_countrycode_error">Ocurrió un error al establecer el código de región</string>
+    <string name="wifi_setting_priority_title">Prioridad Wi-Fi</string>
+    <string name="wifi_setting_priority_summary">Especificar la prioridad de las redes Wi-Fi</string>
     <string name="volume_adjust_sounds_enable_title">Sonido al ajustar volumen</string>
     <string name="volume_adjust_sounds_enable_summary">Reproducir un sonido cuando se ajuste el volumen con los controles al efecto</string>
     <string name="lockpattern_settings_enable_error_path_title">Mostrar patrón erróneo</string>
@@ -33,6 +38,7 @@
     <string name="root_access_adb">Sólo ADB</string>
     <string name="root_access_all">Aplicaciones y ADB</string>
     <string name="accessibility_home_button_answers_call_prerefence_title">Botón Inicio descuelga</string>
+    <string name="headset_category_title">Auriculares</string>
     <string name="ok">Aceptar</string>
     <string name="quiet_hours_title">Modo descanso</string>
     <string name="quiet_hours_summary">Silenciar o desactivar sonidos y notificaciones durante un período de tiempo especificado</string>
@@ -187,6 +193,7 @@
     <string name="toggleFlashlight">Linterna</string>
     <string name="toggleLockScreen">Bloqueo pantalla</string>
     <string name="toggleWimax">WiMAX</string>
+    <string name="toggleNfc">NFC</string>
     <string name="screen_security_category">Seguridad de pantalla</string>
     <string name="screen_security_title">Bloqueo de pantalla</string>
     <string name="screen_security_summary">Ver o cambiar seguridad de bloqueo de pantalla, retardos y configuración de tiempos de espera</string>
@@ -390,25 +397,25 @@
     <string name="title_widget_order">Orden de controles</string>
     <string name="summary_widget_order">Seleccionar el orden de los controles mostrados en la barra de controles de energía</string>
     <string name="title_buttons">Controles</string>
-    <string name="title_toggle_airplane">Modo avión</string>
-    <string name="title_toggle_autorotate">Orientación</string>
+    <string name="title_toggle_wifi">Wi-Fi</string>
     <string name="title_toggle_bluetooth">Bluetooth</string>
-    <string name="title_toggle_brightness">Brillo</string>
-    <string name="title_toggle_flashlight">Linterna</string>
     <string name="title_toggle_gps">GPS</string>
-    <string name="title_toggle_lte">LTE</string>
+    <string name="title_toggle_sound">Volumen</string>
+    <string name="title_toggle_brightness">Brillo</string>
+    <string name="title_toggle_sync">Sincronización</string>
+    <string name="title_toggle_wifiap">Wi-Fi AP</string>
+    <string name="title_toggle_screentimeout">Tiempo espera pantalla</string>
+    <string name="title_toggle_mobiledata">Datos móviles</string>
     <string name="title_toggle_lockscreen">Bloqueo pantalla</string>
+    <string name="title_toggle_networkmode">Modo de red</string>
+    <string name="title_toggle_autorotate">Orientación</string>
+    <string name="title_toggle_airplane">Modo avión</string>
+    <string name="title_toggle_flashlight">Linterna</string>
+    <string name="title_toggle_sleep">Modo en espera</string>
     <string name="title_toggle_media_play_pause">Medios: Reprod./Pausa</string>
     <string name="title_toggle_media_previous">Medios: Anterior</string>
     <string name="title_toggle_media_next">Medios: Siguiente</string>
-    <string name="title_toggle_mobiledata">Datos móviles</string>
-    <string name="title_toggle_networkmode">Modo de red</string>
-    <string name="title_toggle_screentimeout">Tiempo espera pantalla</string>
-    <string name="title_toggle_sleep">Modo en espera</string>
-    <string name="title_toggle_sound">Volumen</string>
-    <string name="title_toggle_sync">Sincronización</string>
-    <string name="title_toggle_wifi">Wi-Fi</string>
-    <string name="title_toggle_wifiap">Wi-Fi AP</string>
+    <string name="title_toggle_lte">LTE</string>
     <string name="title_toggle_wimax">WiMAX</string>
     <string name="title_button_modes">Modos</string>
     <string name="pref_brightness_mode_title">Brillo</string>
@@ -496,31 +503,31 @@
     <string name="tile_picker_summary">Ver, seleccionar o cambiar la posición de los controles a mostrar</string>
     <string name="tile_choose_title">Elegir un control</string>
     <string name="title_tile_airplane">Modo avión</string>
-    <string name="title_tile_autorotate">Orientación</string>
     <string name="title_tile_battery">Batería</string>
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Brillo</string>
-    <string name="title_tile_expanded_desktop">Extender escritorio</string>
-    <string name="title_tile_gps">GPS</string>
-    <string name="title_tile_lte">LTE</string>
-    <string name="title_tile_lockscreen">Bloqueo</string>
-    <string name="title_tile_mobiledata">Datos móviles</string>
-    <string name="title_tile_networkmode">Modo de red</string>
-    <string name="title_tile_nfc">NFC</string>
-    <string name="title_tile_profile">Perfil</string>
-    <string name="title_tile_screen_timeout">Tiempo de espera</string>
-    <string name="title_tile_settings">Ajustes</string>
     <string name="title_tile_sleep">Bloquear</string>
+    <string name="title_tile_gps">GPS</string>
+    <string name="title_tile_torch">Linterna</string>
+    <string name="title_tile_lockscreen">Bloqueo</string>
+    <string name="title_tile_lte">LTE</string>
+    <string name="title_tile_mobiledata">Datos móviles</string>
+    <string name="title_tile_profile">Perfil</string>
+    <string name="title_tile_autorotate">Orientación</string>
+    <string name="title_tile_settings">Ajustes</string>
     <string name="title_tile_sound">Sonido</string>
     <string name="title_tile_sync">Sincronizar</string>
-    <string name="title_tile_torch">Linterna</string>
+    <string name="title_tile_wifiap">Wi-Fi AP</string>
+    <string name="title_tile_wifi">Wi-Fi</string>
+    <string name="title_tile_wimax">WiMAX</string>
+    <string name="title_tile_user">Cambio de usuario</string>
+    <string name="title_tile_networkmode">Modo de red</string>
+    <string name="title_tile_nfc">NFC</string>
+    <string name="title_tile_screen_timeout">Tiempo de espera</string>
     <string name="title_tile_usb_tether">Anclaje USB</string>
     <string name="title_tile_quiet_hours">Modo tranquilidad</string>
-    <string name="title_tile_user">Cambio de usuario</string>
     <string name="title_tile_volume">Volumen</string>
-    <string name="title_tile_wifi">Wi-Fi</string>
-    <string name="title_tile_wifiap">Wi-Fi AP</string>
-    <string name="title_tile_wimax">WiMAX</string>
+    <string name="title_tile_expanded_desktop">Extender escritorio</string>
     <string name="title_dynamic_tiles">Controles dinámicos</string>
     <string name="dynamic_tiles_note_title">Nota</string>
     <string name="dynamic_tiles_note_summary">Los controles dinámicos no siempre estarán visibles y sólo se mostrarán por un evento del sistema</string>
@@ -546,11 +553,6 @@
     <string name="volume_key_cursor_control_off">Deshabilitado</string>
     <string name="volume_key_cursor_control_on">Los botones subir y bajar volumen moverán el cursor a izquierda y derecha respectivamente</string>
     <string name="volume_key_cursor_control_on_reverse">Los botones subir y bajar volumen moverán el cursor a derecha e izquierda respectivamente</string>
-    <string name="wifi_setting_countrycode_title">Código de región Wi-Fi</string>
-    <string name="wifi_setting_countrycode_summary">Especificar el código de región para Wi-Fi</string>
-    <string name="wifi_setting_countrycode_error">Ocurrió un error al establecer el código de región</string>
-    <string name="wifi_setting_priority_title">Prioridad Wi-Fi</string>
-    <string name="wifi_setting_priority_summary">Especificar la prioridad de las redes Wi-Fi</string>
     <string name="pref_wifi_disable_hdcp_title">Omitir negociación HDCP</string>
     <string name="pref_wifi_disable_hdcp_summary">Intenta esta opción si puedes conectarte a la red pero no consigues salida a Internet</string>
     <string name="app_security_title">Seguridad en aplicaciones</string>
@@ -570,7 +572,6 @@
     <string name="lockscreen_background_color_fill">Color de relleno</string>
     <string name="lockscreen_background_custom_image">Imagen personalizada</string>
     <string name="lockscreen_background_default_wallpaper">Fondo por defecto</string>
-    <string name="headset_category_title">Auriculares</string>
     <string name="headset_connect_player_title">Iniciar reproductor</string>
     <string name="headset_connect_player_summary">Iniciar el reproductor de música por defecto al conectar los auriculares</string>
     <string name="safe_headset_volume_title">Volumen seguro</string>
@@ -623,6 +624,12 @@ como introducir manualmente el brillo de pantalla deseado. Seleccionando \u00ABD
 podrás crear una nueva línea con el fin de insertar puntos de control adicionales.
 \u00ABEliminar\u00BB borrará la línea seleccionada.
     </string>
+    <string name="auto_brightness_sensitivity_title">Sensibilidad</string>
+    <string name="auto_brightness_sensitivity_verylow">Muy baja</string>
+    <string name="auto_brightness_sensitivity_low">Baja</string>
+    <string name="auto_brightness_sensitivity_medium">Media</string>
+    <string name="auto_brightness_sensitivity_high">Alta</string>
+    <string name="auto_brightness_sensitivity_veryhigh">Muy alta</string>
     <string name="advanced_reboot_title">Reinicio modo avanzado</string>
     <string name="advanced_reboot_summary">En dispositivos desbloqueados, incluir opciones en el menú de apagado para reiniciar en modo \u00ABrecovery\u00BB o \u00ABbootloader\u00BB</string>
     <string name="navigation_bar_category">Barra de navegación</string>
@@ -644,6 +651,11 @@ podrás crear una nueva línea con el fin de insertar puntos de control adiciona
     <string name="pie_control_title">Controles flotantes</string>
     <string name="pie_control_enabled">Habilitados cuando el escritorio extendido esté activado</string>
     <string name="pie_control_disabled">Deshabilitados</string>
+    <string name="pie_control_sensitivity_title">Sensibilidad</string>
+    <string name="pie_control_sensitivity_low">Baja</string>
+    <string name="pie_control_sensitivity_medium">Media</string>
+    <string name="pie_control_sensitivity_high">Alta</string>
+    <string name="pie_control_sensitivity_very_high">Muy alta</string>
     <string name="pie_control_size">Tamaño de los controles</string>
     <string name="pie_control_trigger_positions">Zonas de activación</string>
     <string name="pie_control_trigger_left">Borde izquierdo</string>
@@ -684,4 +696,6 @@ podrás crear una nueva línea con el fin de insertar puntos de control adiciona
     <string name="power_notifications_vibrate_title">Vibración</string>
     <string name="power_notifications_ringtone_title">Sonido de notificación</string>
     <string name="power_notifications_ringtone_silent">Ninguno</string>
+    <string name="screen_off_animation_title">Efecto al apagar</string>
+    <string name="screen_off_animation_summary">Mostrar un efecto animado al apagar la pantalla</string>
 </resources>
