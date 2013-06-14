@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2012-2013 The CyanogenMod Project
 
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-          http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="font_size_preview_text">Sirva este senhor uma cerveja e kiwis.</string>
@@ -441,7 +441,7 @@
     <string name="status_bar_notif_count_summary">Mostrar o número de notificações pendentes na barra de status</string>
     <string name="display_category_wakeup_options_title">Opções de despertar</string>
     <string name="pref_volume_wake_title">Despertar com volume</string>
-    <string name="pref_volume_wake_summary">Os botões de volume despertarão o dispositivo.</string>
+    <string name="pref_volume_wake_summary">O seu dispositivo despertará ao pressionar os botões de volume.</string>
     <string name="adb_notify">Notificação de depuração USB</string>
     <string name="adb_notify_summary">Exibe uma notificação quando a depuração USB é conectada</string>
     <string name="development_tools_title">Abrir ferramentas</string>
@@ -685,8 +685,25 @@ A luminosidade da tela será alterada em conformidade ao tocar a barra deslizant
 nível de luz.\n
 Opções adicionais estão disponíveis ao tocar e segurar uma linha. Ao selecionar \'Editar\', você pode
 tanto editar o nível de luminosidade ambiante quanto inserir manualmente a luminosidade da tela
-desejada. Selecionando \'Dividir\' permite você a duplicar uma linha  para que possa inserir pontos de
+desejada. Selecionando \'Dividir\' permite você a duplicar uma linha para que possa inserir pontos de
 controle adicionais. \'Remover\' apaga a linha selecionada.
     </string>
     <string name="volume_keys_control_ring_stream">Botões de volume controlam o volume do toque</string>
+    <string name="icon_picker_contacts">Contatos</string>
+    <string name="auto_brightness_sensitivity_title">Ajuste de sensitividade</string>
+    <string name="auto_brightness_sensitivity_verylow">Muito baixa</string>
+    <string name="auto_brightness_sensitivity_low">Baixa</string>
+    <string name="auto_brightness_sensitivity_medium">Média</string>
+    <string name="auto_brightness_sensitivity_high">Alta</string>
+    <string name="auto_brightness_sensitivity_veryhigh">Muito alta</string>
+    <string name="pie_control_sensitivity_title">Responsividade</string>
+    <string name="pie_control_sensitivity_low">Baixa</string>
+    <string name="pie_control_sensitivity_medium">Média</string>
+    <string name="pie_control_sensitivity_high">Alta</string>
+    <string name="pie_control_sensitivity_very_high">Muito alta</string>
+    <string name="screen_off_animation_title">Animação ao desligar a tela</string>
+    <string name="screen_off_animation_summary">Mostrar a animação feixe de elétrons quando a tela é desligada</string>
+    <string name="confirm_delete_apn">O APN vai ser removido.</string>
+    <string name="pref_home_wake_title">Botão home</string>
+    <string name="pref_home_wake_summary">O seu dispositivo despertará ao pressionar o botão home</string>
 </resources>
