@@ -1545,6 +1545,7 @@
 	<!-- crDroid extra activities -->
         <activity android:name=".cyanogenmod.StatusBarStyle" />
 	<activity android:name=".cyanogenmod.NotificationDrawerSettings" />
+	<activity android:name=".cyanogenmod.HaloSettings" /> 
 
         <!-- CyanogenMod activities Start -->
         <activity android:name=".cyanogenmod.PowerWidget" />
