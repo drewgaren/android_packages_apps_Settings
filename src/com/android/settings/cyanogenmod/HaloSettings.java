@@ -39,7 +39,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-public class Toolbar extends SettingsPreferenceFragment
+public class HaloSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
     private static final String KEY_HALO_STATE = "halo_state";
