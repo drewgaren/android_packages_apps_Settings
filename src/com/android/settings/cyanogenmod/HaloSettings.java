@@ -54,6 +54,7 @@ public class HaloSettings extends SettingsPreferenceFragment
     private ListPreference mHaloState;
     private CheckBoxPreference mHaloHide;
     private CheckBoxPreference mHaloReversed;
+    private CheckBoxPreference mHaloPause;
     private CheckBoxPreference mWeWantPopups;
     
     private Context mContext;
@@ -127,6 +128,7 @@ public class HaloSettings extends SettingsPreferenceFragment
             Settings.System.putInt(mContext.getContentResolver(),
                     Settings.System.HALO_PAUSE, mHaloPause.isChecked()
                     ? 1 : 0);
+	}
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
