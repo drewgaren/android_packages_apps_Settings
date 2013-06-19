@@ -21,6 +21,13 @@
     <PreferenceCategory
        android:title="@string/power_widget_title">
 
+	<ListPreference
+            android:key="notifications_behaviour"
+	    android:dialogTitle="@string/additional_options_title"
+            android:title="@string/notification_behaviour_title"
+            android:entries="@array/notifs_beh_entries"
+            android:entryValues="@array/notifs_beh_values" />  	
+
         <CheckBoxPreference
             android:key="expanded_widget"
             android:title="@string/title_expanded_widget"

@@ -106,11 +106,6 @@
 
         </PreferenceScreen>
 
-        <PreferenceScreen  
-            android:fragment="com.android.settings.cyanogenmod.NotificationDrawerSettings"
-            android:key="additional_options_title"
-            android:title="@string/additional_options_title" />  	
-
         <CheckBoxPreference
             android:key="status_bar_auto_hide"
             android:title="@string/auto_hide_statusbar"
