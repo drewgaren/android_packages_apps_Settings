@@ -43,6 +43,7 @@ import static com.android.internal.util.cm.QSConstants.TILE_USER;
 import static com.android.internal.util.cm.QSConstants.TILE_VOLUME;
 import static com.android.internal.util.cm.QSConstants.TILE_WIFI;
 import static com.android.internal.util.cm.QSConstants.TILE_WIFIAP;
+import static com.android.internal.util.cm.QSConstants.TILE_REBOOT;	
 import static com.android.internal.util.cm.QSUtils.deviceSupportsBluetooth;
 import static com.android.internal.util.cm.QSUtils.deviceSupportsMobileData;
 
@@ -137,6 +138,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_FCHARGE, new QuickSettingsUtil.TileInfo(
                 TILE_FCHARGE, R.string.title_tile_fcharge,
                 "com.android.systemui:drawable/ic_qs_fcharge_off"));
+	TILES.put(TILE_REBOOT, new QuickSettingsUtil.TileInfo(
+                TILE_REBOOT, R.string.title_tile_reboot,
+                "com.android.systemui:drawable/ic_qs_reboot")); 
     }
 
     public static String getCurrentTiles(Context context) {

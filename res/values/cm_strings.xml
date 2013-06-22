@@ -609,6 +609,7 @@
     <string name="title_toggle_media_previous">Media: Skip to Previous</string>
     <string name="title_toggle_media_next">Media: Skip to Next</string>
     <string name="title_toggle_lte">Toggle LTE</string>
+    <string name="title_toggle_reboot">Toggle Reboot</string> 
     <string name="title_toggle_wimax">Toggle WiMAX</string>
     <string name="title_toggle_fcharge">Toggle Fast Charge</string>
     <string name="title_button_modes">Button modes</string>
@@ -831,6 +832,7 @@
     <string name="title_tile_quiet_hours">Quiet hours</string>
     <string name="title_tile_volume">Volume</string>
     <string name="title_tile_expanded_desktop">Expanded desktop</string>
+    <string name="title_tile_reboot">Reboot</string> 
 
     <string name="title_dynamic_tiles">Dynamic tiles</string>
     <string name="dynamic_tiles_note_title">Note</string>
