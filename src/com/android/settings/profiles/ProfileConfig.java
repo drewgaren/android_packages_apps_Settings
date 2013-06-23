@@ -187,7 +187,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
         pa.startActivity(i);
     }
 
-    private void TriggerFragment() {
+    private void startTriggerFragment() {
         final PreferenceActivity pa = (PreferenceActivity) getActivity();
         final Bundle args = new Bundle();
         args.putParcelable("profile", mProfile);
