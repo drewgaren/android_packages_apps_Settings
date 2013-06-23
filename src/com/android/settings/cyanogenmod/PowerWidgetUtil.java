@@ -54,6 +54,7 @@ public class PowerWidgetUtil {
     public static final String BUTTON_MEDIA_PREVIOUS = "toggleMediaPrevious";
     public static final String BUTTON_MEDIA_NEXT = "toggleMediaNext";
     public static final String BUTTON_LTE = "toggleLte";
+    public static final String BUTTON_REBOOT = "toggleReboot";
     public static final String BUTTON_WIMAX = "toggleWimax";
     public static final String BUTTON_FCHARGE = "toggleFCharge"; 
 
@@ -112,6 +113,9 @@ public class PowerWidgetUtil {
         BUTTONS.put(BUTTON_MEDIA_NEXT, new PowerWidgetUtil.ButtonInfo(
                 BUTTON_MEDIA_NEXT, R.string.title_toggle_media_next,
                 "com.android.systemui:drawable/stat_media_next"));
+	BUTTONS.put(BUTTON_REBOOT, new PowerWidgetUtil.ButtonInfo(
+                BUTTON_REBOOT, R.string.title_toggle_reboot,
+                "com.android.systemui:drawable/stat_reboot")); 
         if(PhoneConstants.LTE_ON_CDMA_TRUE == TelephonyManager.getDefault().getLteOnCdmaMode() ||
            TelephonyManager.getDefault().getLteOnGsmMode() != 0) {
             BUTTONS.put(BUTTON_LTE, new PowerWidgetUtil.ButtonInfo(
@@ -123,7 +127,7 @@ public class PowerWidgetUtil {
                 "com.android.systemui:drawable/stat_wimax_on"));
         BUTTONS.put(BUTTON_FCHARGE, new PowerWidgetUtil.ButtonInfo(
                 BUTTON_FCHARGE, R.string.title_toggle_fcharge,
-                "com.android.systemui:drawable/toggle_fcharge")); 
+                "com.android.systemui:drawable/toggle_fcharge"));
     }
 
     private static final String BUTTON_DELIMITER = "|";
