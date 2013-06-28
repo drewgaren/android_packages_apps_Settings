@@ -445,6 +445,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
         String mLabel;
         ConnectionSettings mSettings;
         ProfileConnectionPreference mCheckbox;
+        int mChoices;
 
         public ConnectionItem(int connectionId, String label) {
             mConnectionId = connectionId;
