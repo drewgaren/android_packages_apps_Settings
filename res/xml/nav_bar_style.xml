@@ -19,7 +19,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/nav_bar_background_style">
 
-    <!-- Status bar tweaks -->
+    <!-- Navigation bar background customization -->
     <PreferenceCategory
         android:title="@string/nav_bar_background_style">
 

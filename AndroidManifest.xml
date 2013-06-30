@@ -1546,6 +1546,8 @@
 	<!-- crDroid extra activities -->
         <activity android:name=".cyanogenmod.StatusBarStyle" />
 	<activity android:name=".cyanogenmod.NavBarStyle" />
+        <activity android:name=".cyanogenmod.NavBarDimen" />
+        <activity android:name=".cyanogenmod.NavBarSettings" /> 
 	<activity android:name=".cyanogenmod.HaloSettings" /> 
 
         <!-- CyanogenMod activities Start -->

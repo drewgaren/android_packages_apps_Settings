@@ -1,18 +1,18 @@
 /*
- * Copyright (C) 2012 The CyanogenMod project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+* Copyright (C) 2012 The CyanogenMod project
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 
 package com.android.settings.cyanogenmod;
 
@@ -26,7 +26,7 @@ import android.os.UserHandle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.PreferenceCategory; 
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.ListPreference;
 import android.provider.Settings;
@@ -48,7 +48,6 @@ public class SystemSettings extends SettingsPreferenceFragment implements Prefer
     private static final String KEY_BATTERY_LIGHT = "battery_light";
     private static final String KEY_HARDWARE_KEYS = "hardware_keys";
     private static final String KEY_NAVIGATION_BAR = "navigation_bar";
-    private static final String KEY_NAVIGATION_BAR_HEIGHT = "navigation_bar_height";
     private static final String KEY_NAVIGATION_RING = "navigation_ring";
     private static final String KEY_NAVIGATION_BAR_CATEGORY = "navigation_bar_category";
     private static final String KEY_LOCK_CLOCK = "lock_clock";
@@ -78,30 +77,23 @@ public class SystemSettings extends SettingsPreferenceFragment implements Prefer
         addPreferencesFromResource(R.xml.system_settings);
         PreferenceScreen prefScreen = getPreferenceScreen();
 
-        //NavigationBarHeight - TODO make it depending on the user
-        mNavigationBarHeight = (ListPreference) findPreference(KEY_NAVIGATION_BAR_HEIGHT);
-        mNavigationBarHeight.setOnPreferenceChangeListener(this);
-
-        int statusNavigationBarHeight = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                 Settings.System.NAVIGATION_BAR_HEIGHT, 48);
-        mNavigationBarHeight.setValue(String.valueOf(statusNavigationBarHeight));
-        mNavigationBarHeight.setSummary(mNavigationBarHeight.getEntry());
-
         // Only show the hardware keys config on a device that does not have a navbar
         // and the navigation bar config on phones that has a navigation bar
         boolean removeKeys = false;
         boolean removeNavbar = false;
 
-	PreferenceCategory navbarCategory =
-                (PreferenceCategory) findPreference(KEY_NAVIGATION_BAR_CATEGORY); 
+		//PreferenceCategory navbarCategory =
+                //(PreferenceCategory) findPreference(KEY_NAVIGATION_BAR_CATEGORY);
 
-        IWindowManager windowManager = IWindowManager.Stub.asInterface(
+		IWindowManager windowManager = IWindowManager.Stub.asInterface(
                 ServiceManager.getService(Context.WINDOW_SERVICE));
-        try {
+
+
+	try {
             if (windowManager.hasNavigationBar()) {
                 removeKeys = true;
-            } else {
-                removeNavbar = true;
+            //} else {
+            // removeNavbar = true;
             }
         } catch (RemoteException e) {
             // Do nothing
@@ -110,9 +102,11 @@ public class SystemSettings extends SettingsPreferenceFragment implements Prefer
 	if (removeKeys) {
             prefScreen.removePreference(findPreference(KEY_HARDWARE_KEYS));
         }
-        if (removeNavbar) {
-            prefScreen.removePreference(navbarCategory);
-        } 
+	/*
+	if (removeNavbar) {
+	prefScreen.removePreference(navbarCategory);
+	}
+	*/
 
         // Determine which user is logged in
         mIsPrimary = UserHandle.myUserId() == UserHandle.USER_OWNER;
@@ -165,9 +159,15 @@ public class SystemSettings extends SettingsPreferenceFragment implements Prefer
                 updateExpandedDesktop(expandedDesktopValue);
                 prefScreen.removePreference(mExpandedDesktopNoNavbarPref);
             } else {
-                mExpandedDesktopNoNavbarPref.setOnPreferenceChangeListener(this);
-                mExpandedDesktopNoNavbarPref.setChecked(expandedDesktopValue > 0);
-                prefScreen.removePreference(mExpandedDesktopPref);
+		// enable "Status bar visible" mode on devices without navbar
+		// even in devices with no nav bar support by default
+		mExpandedDesktopPref.setOnPreferenceChangeListener(this);
+                mExpandedDesktopPref.setValue(String.valueOf(expandedDesktopValue));
+                updateExpandedDesktop(expandedDesktopValue);
+                prefScreen.removePreference(mExpandedDesktopNoNavbarPref);
+                //mExpandedDesktopNoNavbarPref.setOnPreferenceChangeListener(this);
+                //mExpandedDesktopNoNavbarPref.setChecked(expandedDesktopValue > 0);
+                //prefScreen.removePreference(mExpandedDesktopPref);
             }
         } catch (RemoteException e) {
             Log.e(TAG, "Error getting navigation bar status");
@@ -181,7 +181,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements Prefer
                                     Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY, 0);
         mLowBatteryWarning.setValue(String.valueOf(lowBatteryWarning));
         mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntry());
-        mLowBatteryWarning.setOnPreferenceChangeListener(this); 
+        mLowBatteryWarning.setOnPreferenceChangeListener(this);
 
     }
 
@@ -213,18 +213,11 @@ public class SystemSettings extends SettingsPreferenceFragment implements Prefer
             int expandedDesktopValue = Integer.valueOf((String) objValue);
             updateExpandedDesktop(expandedDesktopValue);
             return true;
-        } else if (preference == mExpandedDesktopNoNavbarPref) {
-            boolean value = (Boolean) objValue;
-            updateExpandedDesktop(value ? 2 : 0);
-            return true;
-        } else if (preference == mNavigationBarHeight) {
-            int statusNavigationBarHeight = Integer.valueOf((String) objValue);
-            int index = mNavigationBarHeight.findIndexOfValue((String) objValue);
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_HEIGHT, statusNavigationBarHeight);
-            mNavigationBarHeight.setSummary(mNavigationBarHeight.getEntries()[index]);
-            return true;
-	} else if (preference == mLowBatteryWarning) {
+        //} else if (preference == mExpandedDesktopNoNavbarPref) {
+        // boolean value = (Boolean) objValue;
+        // updateExpandedDesktop(value ? 2 : 0);
+        // return true;
+        } else if (preference == mLowBatteryWarning) {
             int lowBatteryWarning = Integer.valueOf((String) objValue);
             int index = mLowBatteryWarning.findIndexOfValue((String) objValue);
             Settings.System.putInt(getActivity().getContentResolver(),
