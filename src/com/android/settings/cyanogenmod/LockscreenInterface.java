@@ -84,8 +84,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private File mWallpaperImage;
     private File mWallpaperTemporary;
     private DevicePolicyManager mDPM;
-    private ComponentName mDpmAdminName; 
-
+    
     private boolean mIsPrimary;
 
     public boolean hasButtons() {
@@ -143,8 +142,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         mEnableCamera.setOnPreferenceChangeListener(this);
 
         mDPM = (DevicePolicyManager)getSystemService(Context.DEVICE_POLICY_SERVICE);
-        mDpmAdminName = new ComponentName(getActivity(), DeviceAdminLockscreenReceiver.class);
-
+        
         boolean widgetsEnabled = mDPM.getKeyguardDisabledFeatures(null) == 0;
         mEnableWidgets.setChecked(widgetsEnabled);
         mEnableCamera.setChecked(!mDPM.getCameraDisabled(null)); 
@@ -249,16 +247,22 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             mDPM.setCameraDisabled(mDpmAdminName, !value);
             return true;
         } else if (preference == mEnableWidgets) {
-            boolean value = (Boolean) objValue;
-            mDPM.setActiveAdmin(mDpmAdminName, true);
-            mDPM.setKeyguardDisabledFeatures(mDpmAdminName, value
-                    ? DevicePolicyManager.KEYGUARD_DISABLE_FEATURES_NONE
-                    : DevicePolicyManager.KEYGUARD_DISABLE_WIDGETS_ALL);
+            updateKeyguardState((Boolean) objValue, mEnableWidgets.isChecked()); 
             return true
         }
 
         return false;
     }
+
+    private void updateKeyguardState(boolean enableCamera, boolean enableWidgets) {
+        ComponentName dpmAdminName = new ComponentName(getActivity(),
+                DeviceAdminLockscreenReceiver.class);
+        mDPM.setActiveAdmin(dpmAdminName, true);
+        mDPM.setKeyguardDisabledFeatures(dpmAdminName, enableWidgets
+                ? DevicePolicyManager.KEYGUARD_DISABLE_FEATURES_NONE
+                : DevicePolicyManager.KEYGUARD_DISABLE_WIDGETS_ALL);
+        mDPM.setCameraDisabled(dpmAdminName, !enableCamera);
+    } 
 
     private boolean handleBackgroundSelection(int selection) {
         if (selection == LOCKSCREEN_BACKGROUND_COLOR_FILL) {
