@@ -242,13 +242,11 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             int selection = mCustomBackground.findIndexOfValue(objValue.toString());
             return handleBackgroundSelection(selection);
 	} else if (preference == mEnableCamera) {
-            boolean value = (Boolean) objValue;
-            mDPM.setActiveAdmin(mDpmAdminName, true);
-            mDPM.setCameraDisabled(mDpmAdminName, !value);
+            updateKeyguardState((Boolean) objValue, mEnableWidgets.isChecked()); 
             return true;
         } else if (preference == mEnableWidgets) {
-            updateKeyguardState((Boolean) objValue, mEnableWidgets.isChecked()); 
-            return true
+            updateKeyguardState(mEnableCamera.isChecked(), (Boolean) objValue);  
+            return true;
         }
 
         return false;
