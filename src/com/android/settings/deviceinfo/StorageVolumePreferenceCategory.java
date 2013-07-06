@@ -42,7 +42,7 @@ import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.text.format.Formatter;
 import android.util.Log;
-+import android.widget.Toast;
+import android.widget.Toast;
 
 import com.android.settings.R;
 import com.android.settings.deviceinfo.StorageMeasurement.MeasurementDetails;
