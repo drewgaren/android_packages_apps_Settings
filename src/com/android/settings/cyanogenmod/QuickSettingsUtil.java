@@ -126,10 +126,10 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_SETTINGS, R.string.title_tile_settings,
                 "com.android.systemui:drawable/ic_qs_settings"));
-        TILES.put(TILE_RINGER, new QuickSettingsUtil.TileInfo(
+        registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_RINGER, R.string.title_tile_sound,
                 "com.android.systemui:drawable/ic_qs_ring_on"));
-        TILES.put(TILE_SYNC, new QuickSettingsUtil.TileInfo(
+        registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_SYNC, R.string.title_tile_sync,
                 "com.android.systemui:drawable/ic_qs_sync_off"));
         registerTile(new QuickSettingsUtil.TileInfo(
