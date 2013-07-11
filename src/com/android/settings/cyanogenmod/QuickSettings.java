@@ -73,10 +73,10 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
     CheckBoxPreference mDynamicDockBattery;
     CheckBoxPreference mDynamicWifi;
     CheckBoxPreference mDynamicIme;
-    CheckBoxPreference mNoNotificationsPulldown; 
     CheckBoxPreference mDynamicUsbTether;
     CheckBoxPreference mCollapsePanel;
     ListPreference mQuickPulldown;
+    ListPreference mNoNotificationsPulldown; 
     PreferenceCategory mGeneralSettings;
     PreferenceCategory mStaticTiles;
     PreferenceCategory mDynamicTiles;
@@ -97,8 +97,9 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
         mStaticTiles = (PreferenceCategory) prefSet.findPreference(STATIC_TILES);
         mDynamicTiles = (PreferenceCategory) prefSet.findPreference(DYNAMIC_TILES);
         mQuickPulldown = (ListPreference) prefSet.findPreference(QUICK_PULLDOWN);
-	mNoNotificationsPulldown = (CheckBoxPreference) prefSet.findPreference(NO_NOTIFICATIONS_PULLDOWN);
-        if (!Utils.isPhone(getActivity())) {
+	mNoNotificationsPulldown = (ListPreference) prefSet.findPreference(NO_NOTIFICATIONS_PULLDOWN); 
+        
+	if (!Utils.isPhone(getActivity())) {
             if(mQuickPulldown != null)
                 mGeneralSettings.removePreference(mQuickPulldown);
 	    if(mNoNotificationsPulldown != null)
@@ -109,8 +110,11 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
             mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
             updatePulldownSummary(quickPulldownValue);
 
-	    mNoNotificationsPulldown.setChecked(Settings.System.getInt(resolver,
-                Settings.System.QS_NO_NOTIFICATION_PULLDOWN, 0) == 1); 
+	    mNoNotificationsPulldown.setOnPreferenceChangeListener(this);
+            int noNotificationsPulldownValue = Settings.System.getInt(resolver, Settings.System.QS_NO_NOTIFICATION_PULLDOWN, 0);
+            mNoNotificationsPulldown.setValue(String.valueOf(noNotificationsPulldownValue));
+            updateNoNotificationsPulldownSummary(noNotificationsPulldownValue);
+  
         }
 
         mCollapsePanel = (CheckBoxPreference) prefSet.findPreference(COLLAPSE_PANEL);
@@ -226,11 +230,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
             Settings.System.putInt(resolver, Settings.System.QS_COLLAPSE_PANEL,
                     mCollapsePanel.isChecked() ? 1 : 0);
             return true;
-	} else if (preference == mNoNotificationsPulldown) {
-            Settings.System.putInt(resolver, Settings.System.QS_NO_NOTIFICATION_PULLDOWN,
-                    mNoNotificationsPulldown.isChecked() ? 1 : 0);
-            return true; 
-        }
+	}
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
@@ -270,6 +270,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
                     quickPulldownValue);
             updatePulldownSummary(quickPulldownValue);
             return true;
+	} else if (preference == mNoNotificationsPulldown) {
+            int noNotificationsPulldownValue = Integer.valueOf((String) newValue);
+            Settings.System.putInt(resolver, Settings.System.QS_NO_NOTIFICATION_PULLDOWN,
+                    noNotificationsPulldownValue);
+            updateNoNotificationsPulldownSummary(noNotificationsPulldownValue);
+            return true; 
         } else if (preference == mScreenTimeoutMode) {
             int value = Integer.valueOf((String) newValue);
             int index = mScreenTimeoutMode.findIndexOfValue((String) newValue);
@@ -303,18 +309,27 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
     }
 
     private void updatePulldownSummary(int value) {
-        Resources res = getResources();
-
+        
         if (value == 0) {
             /* quick pulldown deactivated */
-            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_off));
-        } else if (value == 3) {
-            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_summary_always));
+            mQuickPulldown.setSummary(getResources().getString(R.string.quick_pulldown_off));
         } else {
-            String direction = res.getString(value == 2
+            String direction = getResources().getString(value == 2 
                     ? R.string.quick_pulldown_summary_left
                     : R.string.quick_pulldown_summary_right);
-            mQuickPulldown.setSummary(res.getString(R.string.summary_quick_pulldown, direction));
+            mQuickPulldown.setSummary(getResources().getString(R.string.summary_quick_pulldown, direction));
+        }
+    }
+
+    private void updateNoNotificationsPulldownSummary(int value) {
+
+        if (value == 0) {
+            /* No Notifications Pulldown deactivated */
+            mNoNotificationsPulldown.setSummary(getResources().getString(R.string.no_notifications_pulldown_off));
+        } else {
+            mNoNotificationsPulldown.setSummary(getResources().getString(value == 1
+                    ? R.string.no_notifications_pulldown_summary_nonperm
+                    : R.string.no_notifications_pulldown_summary_all)); 
         }
     }
 
