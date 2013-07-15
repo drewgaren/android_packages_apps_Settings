@@ -1145,7 +1145,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="auto_hide_statusbar_summary_all">Auto Hide statusbar if no notifications are present</string>
     <string name="auto_hide_statusbar_off">Off</string>
     <string name="auto_hide_statusbar_nonperm">Non-permanent only</string>
-    <string name="auto_hide_statusbar_all">All Notifications</string> 
+    <string name="auto_hide_statusbar_all">All Notifications</string>
+
+    <!-- Statusbar Quick Peek -->
+    <string name="statusbar_quick_peek_title">Quick Peek</string>
+    <string name="statusbar_quick_peek_summary">Peek at statusbar by swiping from top edge of screen</string>  
 
     <!-- Advanced low battery indicator options -->	
     <string name="pref_low_battery_warning_policy_title">Low battery warning</string>

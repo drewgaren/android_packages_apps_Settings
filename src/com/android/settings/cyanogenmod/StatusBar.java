@@ -30,6 +30,7 @@ import android.util.Log;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.util.Helpers; 
 
 import com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference;
 
@@ -46,7 +47,8 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String PREF_STATUS_BAR_CIRCLE_BATTERY_TEXT_COLOR = "circle_battery_text_color";
     private static final String PREF_STATUS_BAR_CIRCLE_BATTERY_ANIMATIONSPEED = "circle_battery_animation_speed";
     private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
-    private static final String STATUS_BAR_AUTO_HIDE = "status_bar_auto_hide"; 
+    private static final String STATUS_BAR_AUTO_HIDE = "status_bar_auto_hide";
+    private static final String STATUS_BAR_QUICK_PEEK = "status_bar_quick_peek";   
     private static final String STATUS_BAR_SIGNAL = "status_bar_signal";
     private static final String STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
     private static final String STATUS_BAR_CATEGORY_GENERAL = "status_bar_general";
@@ -73,7 +75,8 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private CheckBoxPreference mBatteryBarChargingAnimation;
     private PreferenceCategory mPrefCategoryGeneral;
     private ColorPickerPreference mBatteryBarColor;
-    private ListPreference mStatusBarAutoHide; 
+    private ListPreference mStatusBarAutoHide;
+    private CheckBoxPreference mStatusBarQuickPeek;   
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -181,7 +184,11 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
                 Settings.System.AUTO_HIDE_STATUSBAR, 0);
         mStatusBarAutoHide.setValue(String.valueOf(statusBarAutoHideValue));
         updateStatusBarAutoHideSummary(statusBarAutoHideValue);
-        mStatusBarAutoHide.setOnPreferenceChangeListener(this);  
+        mStatusBarAutoHide.setOnPreferenceChangeListener(this);
+
+	mStatusBarQuickPeek = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_QUICK_PEEK);
+        mStatusBarQuickPeek.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.STATUSBAR_PEEK, 0) == 1));     
 
 	mCircleColorReset = (Preference) findPreference(PREF_CIRCLE_COLOR_RESET);
         if (Settings.System.getInt(getActivity().getContentResolver(),
@@ -292,6 +299,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.AUTO_HIDE_STATUSBAR, statusBarAutoHideValue);
             updateStatusBarAutoHideSummary(statusBarAutoHideValue);
+	    Helpers.restartSystemUI();
             return true; 
         }
         return false;
@@ -327,6 +335,12 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+            return true;
+	} else if (preference == mStatusBarQuickPeek) {
+            value = mStatusBarQuickPeek.isChecked();
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.STATUSBAR_PEEK, value ? 1 : 0);
+	    Helpers.restartSystemUI();
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
