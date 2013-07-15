@@ -92,6 +92,8 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
+	mStatusBarTraffic = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_TRAFFIC);
+
         mStatusBarBrightnessControl = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_BRIGHTNESS_CONTROL);
         mStatusBarBattery = (ListPreference) prefSet.findPreference(STATUS_BAR_BATTERY);
 
@@ -250,12 +252,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_CIRCLE_BATTERY_RESET, 0);
             return true;
-	} else if (preference == mStatusBarTraffic) {
-            value = mStatusBarTraffic.isChecked();
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.STATUS_BAR_TRAFFIC, value ? 1 : 0);
-            return true;
-        } else if (preference == mStatusBarCmSignal) {
+	} else if (preference == mStatusBarCmSignal) {
             int signalStyle = Integer.valueOf((String) newValue);
             int index = mStatusBarCmSignal.findIndexOfValue((String) newValue);
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
@@ -352,6 +349,11 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
                     Settings.System.STATUSBAR_PEEK, value ? 1 : 0);
 	    Helpers.restartSystemUI();
             return true;
+	} else if (preference == mStatusBarTraffic) {
+             value = mStatusBarTraffic.isChecked();
+             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                     Settings.System.STATUS_BAR_TRAFFIC, value ? 1 : 0);
+            return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
 
@@ -363,7 +365,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             mClockStyle.setSummary(getString(R.string.clock_enabled));
         } else {
             mClockStyle.setSummary(getString(R.string.clock_disabled));
-         }	
+        }	
 
     }
 
