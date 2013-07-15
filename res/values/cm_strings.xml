@@ -1151,6 +1151,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="statusbar_quick_peek_title">Quick Peek</string>
     <string name="statusbar_quick_peek_summary">Peek at statusbar by swiping from top edge of screen</string>  
 
+    <!-- Network speed -->
+    <string name="show_network_speed">Network speed indicator</string>
+    <string name="show_network_speed_summary">Show network speed in statsbar</string>
+
     <!-- Advanced low battery indicator options -->	
     <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
     <string name="pref_low_battery_warning_policy_dialog_title">Indicate low battery warning with</string>
@@ -1184,11 +1188,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="halo_pause_title">HALO pause active app</string>
     <string name="halo_pause_summary">When opening an app with HALO the underlying app will get paused (enabled by default on low memory devices)</string>
  
-
     <!-- We want HALO popups -->
     <string name="popups_title">Allow floating windows</string>
     <string name="popups_summary">Controls whether you want floating windows from notification panel</string>
-
 
     <!-- finnqBuilds ADDITIONS START -->
 
