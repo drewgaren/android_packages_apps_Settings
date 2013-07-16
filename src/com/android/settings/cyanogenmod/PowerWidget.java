@@ -16,7 +16,6 @@
 
 package com.android.settings.cyanogenmod;
 
-import java.io.File; 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -67,9 +66,6 @@ public class PowerWidget extends SettingsPreferenceFragment implements
     private static final String UI_EXP_WIDGET_HAPTIC_FEEDBACK = "expanded_haptic_feedback";
     private static final String KEY_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
     private static final String PREF_BRIGHTNESS_LOC = "brightness_location";
-
-    public static final String FAST_CHARGE_DIR = "/sys/kernel/fast_charge";
-    public static final String FAST_CHARGE_FILE = "force_fast_charge"; 
 
     private CheckBoxPreference mPowerWidget;
     private CheckBoxPreference mPowerWidgetHideOnChange;
@@ -136,7 +132,8 @@ public class PowerWidget extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mNotificationsBehavior) {
             String val = (String) newValue;
-            Settings.System.putInt(getContentResolver(),                            			    Settings.System.NOTIFICATIONS_BEHAVIOUR,
+            Settings.System.putInt(getContentResolver(), 
+		    Settings.System.NOTIFICATIONS_BEHAVIOUR,
             Integer.valueOf(val));
             int index = mNotificationsBehavior.findIndexOfValue(val);
             mNotificationsBehavior.setSummary(mNotificationsBehavior.getEntries()[index]);
@@ -288,13 +285,6 @@ public class PowerWidget extends SettingsPreferenceFragment implements
                 PowerWidgetUtil.BUTTONS.remove(PowerWidgetUtil.BUTTON_WIFIAP);
                 prefButtonsModes.removePreference(mNetworkMode);
             }
-
-            // Dont show fast charge option if not supported
-            File fastcharge = new File(FAST_CHARGE_DIR, FAST_CHARGE_FILE);
-            if (!fastcharge.exists()) {
-                PowerWidgetUtil.BUTTONS.remove(PowerWidgetUtil.BUTTON_FCHARGE);
-            }
-
 
             // fill that checkbox map!
             for (PowerWidgetUtil.ButtonInfo button : PowerWidgetUtil.BUTTONS.values()) {
