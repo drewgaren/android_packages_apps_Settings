@@ -1192,6 +1192,14 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="halo_state_white">White list</string> 
     <string name="halo_pause_title">HALO pause active app</string>
     <string name="halo_pause_summary">When opening an app with HALO the underlying app will get paused (enabled by default on low memory devices)</string>
+    <string name="halo_size_title">HALO size</string>
+    <string name="halo_size_summary">Defines how big HALO is going to be</string>
+    <string name="halo_size_miniscule">Miniscule</string>
+    <string name="halo_size_small">Small</string>
+    <string name="halo_size_default">Default</string>
+    <string name="halo_size_large">Large</string>
+    <string name="halo_size_gigantic">Gigantic</string>
+    <string name="halo_size_monster">Monster</string>
 
    <!-- App Sidebar -->
     <string name="pref_interface_app_sidebar_title">Appbar</string>
