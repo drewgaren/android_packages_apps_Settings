@@ -1154,6 +1154,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="show_network_speed">Network speed indicator</string>
     <string name="show_network_speed_summary">Show network speed in statusbar</string>
 
+    <!-- crDroid Network speed color style -->
+    <string name="network_speed_color_title">Network speed color</string>
+    <string name="network_speed_color_style">Color style</string>
+    <string name="network_speed_style_reset">Reset</string>
+    <string name="network_speed_color_summary">Change the color of network speed indicator</string>
+
     <!-- Advanced low battery indicator options -->	
     <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
     <string name="pref_low_battery_warning_policy_dialog_title">Indicate low battery warning with</string>
