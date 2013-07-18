@@ -306,8 +306,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.AUTO_HIDE_STATUSBAR, statusBarAutoHideValue);
             updateStatusBarAutoHideSummary(statusBarAutoHideValue);
-	    Helpers.restartSystemUI();
-            return true; 
+	    return true; 
         }
         return false;
     }
@@ -347,8 +346,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             value = mStatusBarQuickPeek.isChecked();
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.STATUSBAR_PEEK, value ? 1 : 0);
-	    Helpers.restartSystemUI();
-            return true;
+	    return true;
 	} else if (preference == mStatusBarTraffic) {
              value = mStatusBarTraffic.isChecked();
              Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
