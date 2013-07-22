@@ -1556,7 +1556,16 @@
 	<activity android:name=".cyanogenmod.NavBarStyle" />
         <activity android:name=".cyanogenmod.NavBarDimen" />
         <activity android:name=".cyanogenmod.NavBarSettings" /> 
-	<activity android:name=".cyanogenmod.HaloSettings" /> 
+	<activity android:name=".cyanogenmod.HaloSettings" />
+        <activity android:name=".cyanogenmod.UserInterface" />
+
+        <activity
+            android:name=".cyanogenmod.DensityChanger"
+            android:label="@string/lcd_density_wizard" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>  
 
         <!-- CyanogenMod activities Start -->
         <activity android:name=".cyanogenmod.PowerWidget" />

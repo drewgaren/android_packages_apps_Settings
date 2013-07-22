@@ -59,7 +59,7 @@ limitations under the License.
 
     <!-- crDroid Version -->	
     <string name="crDroid_version">Versão crDroid AOSP</string>
-    <string name="crDroid_version_default">Desconhecida</string>
+    <string name="crDroid_version_default">Build ??</string>
 
     <string name="build_date">Data de compilação</string>
     <string name="cpu_info">CPU</string>

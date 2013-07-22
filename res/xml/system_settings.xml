@@ -55,6 +55,12 @@
                 android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
     </PreferenceScreen>
 
+    <PreferenceScreen
+        android:key="general_ui_settings"
+        android:fragment="com.android.settings.cyanogenmod.UserInterface"
+        android:title="@string/title_ui"
+        android:summary="@string/title_ui_summary">
+
     <ListPreference
         android:key="expanded_desktop"
         android:title="@string/power_menu_expanded_desktop"
