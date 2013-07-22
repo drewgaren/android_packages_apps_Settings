@@ -1249,7 +1249,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="dpi">DPI</string>
     <string name="lcd_density_title">LCD Density</string>
     <string name="lcd_density_summary">unknown</string>
-    <string name="lcd_density_msg_summary">Click to enter LCD density changer menu</string>	
     <string name="current_lcd_density">"Current LCD Density: "</string>
     <string name="lcd_density_wizard">LCD Density Wizard</string>
     <string name="follow_through_title">Follow through!</string>
