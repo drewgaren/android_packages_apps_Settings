@@ -20,8 +20,7 @@
 
     <!-- Status bar tweaks -->
     <PreferenceCategory
-        android:key="status_bar_clock"
-        android:title="@string/status_bar_clock_title">
+        android:title="@string/status_bar_style_title">
 
     <PreferenceScreen  
             android:fragment="com.android.settings.cyanogenmod.StatusBarStyle"
