@@ -71,6 +71,7 @@ public class DensityChanger extends SettingsPreferenceFragment implements
 
         mReboot = findPreference("reboot");
         mClearMarketData = findPreference("clear_market_data");
+	mRebootClearData = findPreference("reboot_cleardata");
         mOpenMarket = findPreference("open_market");
 
         mCustomDensity = (ListPreference) findPreference("lcd_density");
