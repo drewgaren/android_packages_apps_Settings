@@ -197,6 +197,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements Prefer
     @Override
     public void onResume() {
         super.onResume();
+	updateRamBar();
 
         // All users
         if (mNotificationPulse != null) {
@@ -215,6 +216,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements Prefer
     @Override
     public void onPause() {
         super.onPause();
+	updateRamBar();
     }
 
     private void updateRamBar() {
@@ -224,18 +226,6 @@ public class SystemSettings extends SettingsPreferenceFragment implements Prefer
             mRamBar.setSummary(getResources().getString(R.string.ram_bar_color_enabled));
         else
             mRamBar.setSummary(getResources().getString(R.string.ram_bar_color_disabled));
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        updateRamBar();
-    }
-
-    @Override
-    public void onPause() {
-        super.onResume();
-        updateRamBar();
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {

@@ -41,17 +41,17 @@
         android:key="ram_bar_style"
         android:title="@string/ram_bar_style_cat">
 
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
+        <com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference
             android:key="ram_bar_color_app_mem"
             android:title="@string/ram_bar_color_app_mem_color"
             android:defaultValue="0xff33b5e5" />
 
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
+        <com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference
             android:key="ram_bar_color_cache_mem"
             android:title="@string/ram_bar_color_cache_mem_color"
             android:defaultValue="0xff00aa00" />
 
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
+        <com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference
             android:key="ram_bar_color_total_mem"
             android:title="@string/ram_bar_color_total_mem_color"
             android:defaultValue="0xffaaaaaa" />
