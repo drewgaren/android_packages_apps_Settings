@@ -40,13 +40,13 @@
                     android:targetClass="com.android.settings.deviceinfo.Status" />
         </PreferenceScreen>
 
-        <!-- CyanogenMod Updates -->
+        <!-- Orca Updates -->
         <PreferenceScreen android:key="cm_updates"
-                android:title="@string/cmupdate_settings_title" 
-                android:summary="@string/cmupdate_settings_summary">
+                android:title="@string/orcaupdate_settings_title" 
+                android:summary="@string/orcaupdate_settings_summary">
             <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.cyanogenmod.updater"
-                    android:targetClass="com.cyanogenmod.updater.UpdatesSettings" />
+                    android:targetPackage="com.s0up.goomanager"
+                    android:targetClass="com.s0up.goomanager.GooManagerActivity" />
         </PreferenceScreen>
 
         <!-- Anonymous statistics - (CMStats) -->
@@ -164,12 +164,6 @@
                 style="?android:preferenceInformationStyle"
                 android:title="@string/mod_version"
                 android:summary="@string/mod_version_default" />
-
-	<!-- crDroid version -->
-        <Preference android:key="crDroid_version"
-                style="?android:preferenceInformationStyle"
-                android:title="@string/crDroid_version"
-                android:summary="@string/crDroid_version_default" />
 
         <!-- Mod build date -->
         <Preference android:key="build_date"

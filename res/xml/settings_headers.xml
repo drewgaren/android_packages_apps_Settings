@@ -35,6 +35,12 @@
         android:fragment="com.android.settings.bluetooth.BluetoothSettings"
         android:title="@string/bluetooth_settings_title"
         android:icon="@drawable/ic_settings_bluetooth2" />
+        
+    <!-- TRDS -->
+    <header
+        android:id="@+id/trds_settings"
+        android:icon="@drawable/ic_settings_trds"
+        android:title="@string/trds_settings_title" />        
 
     <!-- Data Usage -->
     <header
@@ -62,11 +68,12 @@
     <header android:id="@+id/interface_section"
         android:title="@string/header_category_interface" />
 
-    <!-- Launcher -->
+    <!-- System -->
     <header
-        android:id="@+id/launcher_settings"
-        android:title="@string/launcher_settings_title"
-        android:icon="@drawable/ic_settings_cmlauncher" />
+        android:id="@+id/system_settings"
+        android:icon="@drawable/ic_settings_system"
+        android:fragment="com.android.settings.cyanogenmod.SystemSettings"
+        android:title="@string/system_settings_title" />
 
     <!-- Lock screen -->
     <header
@@ -74,12 +81,13 @@
         android:fragment="com.android.settings.cyanogenmod.LockscreenInterface"
         android:title="@string/lock_screen_title"
         android:icon="@drawable/ic_settings_lockscreen" />
-
-    <!-- TRDS -->
+        
+    <!-- Halo -->
     <header
-        android:id="@+id/trds_settings"
-        android:icon="@drawable/ic_settings_trds"
-        android:title="@string/trds_settings_title" />
+        android:id="@+id/halo_settings"
+        android:fragment="com.android.settings.cyanogenmod.HaloSettings"
+        android:icon="@drawable/ic_settings_status_bar" 
+        android:title="@string/halo_settings" />          
 
     <!-- Themes -->
     <header
@@ -91,20 +99,13 @@
             android:targetPackage="com.tmobile.themechooser"
             android:targetClass="com.tmobile.themechooser.ThemeChooser" />
     </header>
-
-    <!-- System -->
+    
+    <!-- Performance -->
     <header
-        android:id="@+id/system_settings"
-        android:icon="@drawable/ic_settings_system"
-        android:fragment="com.android.settings.cyanogenmod.SystemSettings"
-        android:title="@string/system_settings_title" />
-
-    <!-- Halo -->
-    <header
-        android:id="@+id/halo_settings"
-        android:fragment="com.android.settings.cyanogenmod.HaloSettings"
-        android:icon="@drawable/ic_settings_status_bar" 
-        android:title="@string/halo_settings" />  
+        android:id="@+id/performance_settings"
+        android:fragment="com.android.settings.cyanogenmod.PerformanceSettings"
+        android:icon="@drawable/ic_settings_performance"
+        android:title="@string/performance_settings_title" />    
 
     <!-- DEVICE -->
     <header android:id="@+id/device_section"
@@ -194,6 +195,13 @@
         android:icon="@drawable/ic_settings_security"
         android:title="@string/security_settings_title"
         android:id="@+id/security_settings" />
+        
+    <!-- Privacy -->
+    <header
+        android:fragment="com.android.settings.applications.AppOpsSummary"
+        android:icon="@drawable/ic_privacy_guard"
+        android:title="@string/appops_settings_title"
+        android:id="@+id/appops_settings" />        
 
     <!-- Language -->
     <header
@@ -253,13 +261,6 @@
         android:fragment="com.android.settings.cyanogenmod.superuser.PolicyNativeFragment"
         android:icon="@drawable/ic_action_permission"
         android:title="@string/superuser" />
-
-    <!-- Performance -->
-    <header
-        android:id="@+id/performance_settings"
-        android:fragment="com.android.settings.cyanogenmod.PerformanceSettings"
-        android:icon="@drawable/ic_settings_performance"
-        android:title="@string/performance_settings_title" />
 
     <!-- About Device -->
     <header
